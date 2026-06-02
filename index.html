@@ -2,47 +2,38 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>Aprilia Make Up Artist</title>
   <meta name="description" content="Jasa makeup profesional untuk Wedding, Akad Intimate, Graduation, dan acara spesial lainnya di wilayah Klaten, Kulon Progo, Jogja dan sekitarnya.">
   <meta name="author" content="Aprilia Make Up Artist">
   
-  <!-- Anti-Sabotase Warna Browser -->
   <meta name="format-detection" content="telephone=no, date=no, email=no, address=no">
   <meta name="theme-color" content="#f8c8d1">
 
-  <!-- PWA & Native App Capabilities -->
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
-  <!-- DNS Prefetching, Preconnect & Preload LCP -->
-  <link rel="dns-prefetch" href="https://dl.dropboxusercontent.com">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   
-  <!-- Preload Gambar Lokal Pertama Agar Muncul Instan -->
   <link rel="preload" as="image" href="foto-after-1.jpg">
   <link rel="preload" as="image" href="foto-before-1.jpg">
 
-  <!-- Preload Font -->
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap">
 
-  <!-- SEO & Open Graph Meta Tags (Gunakan link utama github.io untuk OG Image) -->
   <link rel="canonical" href="https://apriliamua.github.io">
   <meta property="og:title" content="Aprilia Make Up Artist">
   <meta property="og:description" content="Jasa makeup profesional untuk Wedding, Graduation, dan Engagement di wilayah Klaten, Kulon Progo, Jogja dan sekitarnya.">
+  
   <meta property="og:image" content="https://apriliamua.github.io/foto-after-1.jpg">
   <meta property="og:url" content="https://apriliamua.github.io">
   <meta property="og:type" content="website">
-
-  <!-- Favicon Lokal -->
   <link rel="icon" type="image/jpeg" href="foto-after-1.jpg">
   <link rel="apple-touch-icon" sizes="180x180" href="foto-after-1.jpg">
 
   <style>
-    /* CSS Variables & Reset */
     :root {
       --pink-header: #f8c8d1;
       --gold-accent: #d4af37;
@@ -52,11 +43,7 @@
       --wa-green-hover: #20ba5a;
     }
 
-    * {
-      -webkit-tap-highlight-color: transparent;
-      box-sizing: border-box;
-    }
-
+    * { -webkit-tap-highlight-color: transparent; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body { font-family: 'Montserrat', sans-serif; background-color: #fdfaf6; color: #333; margin: 0; padding: 0; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
     
@@ -67,47 +54,82 @@
     nav a { text-decoration: none; color: var(--red-dark); font-weight: 700; font-size: 0.85rem; }
 
     .container { max-width: 600px; margin: 0 auto; padding: 20px; }
-    
     section { margin-bottom: 40px; contain: content; }
-    
     h3 { color: var(--orange-btn); font-size: 1.7rem; margin-top: 35px; margin-bottom: 15px; text-align: center; }
     .hero-text { color: rgba(0,0,0,0.3); font-size: 2.2rem; line-height: 1.2; font-weight: 700; margin-top: 0; margin-bottom: 30px; text-align: left; }
 
-    /* SLIDER PORTFOLIO */
+    /* SLIDER PORTFOLIO - CROP WAJAH OTOMATIS */
     figure.ba-container { position: relative; width: 100%; height: 450px; border-radius: 12px; overflow: hidden; margin: 0 0 35px 0; border: 1px solid #ddd; touch-action: pan-y; user-select: none; -webkit-user-select: none; transform: translateZ(0); backface-visibility: hidden; }
+    .img-ba { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 20%; pointer-events: none; user-select: none; -webkit-user-select: none; transform: translateZ(0); backface-visibility: hidden; }
     
-    .img-ba { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; object-position: center center; pointer-events: none; user-select: none; -webkit-user-select: none; transform: translateZ(0); backface-visibility: hidden; }
+    .before { position: absolute; top: 0; left: 0; height: 100%; object-fit: cover; object-position: center 20%; pointer-events: none; z-index: 2; width: 50%; border-right: 3px solid var(--gold-accent); will-change: width; transform: translateZ(0); backface-visibility: hidden; }
     
-    .before { position: absolute; top: 0; left: 0; height: 100%; object-fit: cover; object-position: center center; pointer-events: none; z-index: 2; width: 50%; border-right: 3px solid var(--gold-accent); will-change: width; transform: translateZ(0); backface-visibility: hidden; }
-    
-    .ba-label { position: absolute; bottom: 15px; background: rgba(0,0,0,0.6); color: #fff; padding: 4px 10px; font-size: 0.75rem; font-weight: 700; border-radius: 4px; pointer-events: none; z-index: 3; text-transform: uppercase; letter-spacing: 1px; user-select: none; -webkit-user-select: none; }
+    .ba-label { position: absolute; bottom: 15px; background: rgba(0,0,0,0.6); color: #fff; padding: 4px 10px; font-size: 0.75rem; font-weight: 700; border-radius: 4px; pointer-events: none; z-index: 3; text-transform: uppercase; letter-spacing: 1px; }
     .label-before { left: 15px; }
     .label-after { right: 15px; }
 
-    @keyframes pulse-slider {
-      0% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.7), 0 2px 6px rgba(0,0,0,0.3); }
-      70% { box-shadow: 0 0 0 15px rgba(212, 175, 55, 0), 0 2px 6px rgba(0,0,0,0.3); }
-      100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0), 0 2px 6px rgba(0,0,0,0.3); }
-    }
-
+    @keyframes pulse-slider { 0% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.7), 0 2px 6px rgba(0,0,0,0.3); } 70% { box-shadow: 0 0 0 15px rgba(212, 175, 55, 0), 0 2px 6px rgba(0,0,0,0.3); } 100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0), 0 2px 6px rgba(0,0,0,0.3); } }
+    
     .slider-button { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) translateZ(0); width: 48px; height: 48px; background: var(--gold-accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 4; pointer-events: none; will-change: left; animation: pulse-slider 2s infinite; box-shadow: 0 2px 6px rgba(0,0,0,0.3); backface-visibility: hidden; }
     .slider-button::after { content: '◂ ▸'; color: white; font-weight: bold; font-size: 1.1rem; }
     
     .slider-input { -webkit-appearance: none; appearance: none; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: transparent; z-index: 5; outline: none; margin: 0; cursor: ew-resize; }
     .slider-input::-webkit-slider-thumb { -webkit-appearance: none; width: 48px; height: 450px; background: transparent; cursor: ew-resize; }
+    .zoom-btn { position: absolute; top: 15px; right: 15px; width: 45px; height: 45px; background: rgba(255, 255, 255, 0.9); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 20px; z-index: 10; cursor: pointer; box-shadow: 0 3px 8px rgba(0,0,0,0.3); border: none; outline: none; }
 
-    /* TOMBOL */
-    .zoom-btn { position: absolute; top: 15px; right: 15px; width: 45px; height: 45px; background: rgba(255, 255, 255, 0.9); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 20px; z-index: 10; cursor: pointer; box-shadow: 0 3px 8px rgba(0,0,0,0.3); border: none; padding: 0; outline: none; user-select: none; -webkit-user-select: none; }
-
-    .music-btn { position: fixed; bottom: 35px; left: 20px; width: 52px; height: 52px; background: #111; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; z-index: 9000; cursor: pointer; border: 2px solid var(--orange-btn); box-shadow: 0 4px 12px rgba(0,0,0,0.5); padding: 0; outline: none; }
-    .playing { animation: spin 4s linear infinite; }
-    .paused { opacity: 0.6; }
-    @keyframes spin { 100% { transform: rotate(360deg); } }
+    /* MUSIK - PIRINGAN HITAM LINGKARAN MURNI */
+    .music-player { position: fixed; bottom: 25px; left: 20px; z-index: 9000; display: flex; flex-direction: column; align-items: center; cursor: pointer; user-select: none; -webkit-user-select: none; }
+    .record-wrapper { position: relative; width: 75px; height: 75px; margin-bottom: 5px; } /* Bulat tanpa background kotak */
+    
+    /* Body Piringan Hitam */
+    .vinyl-container { position: absolute; top: 0; left: 0; width: 75px; height: 75px; border-radius: 50%; box-shadow: 0 5px 12px rgba(0,0,0,0.5); background: #111; }
+    .vinyl { width: 100%; height: 100%; border-radius: 50%; position: absolute; top: 0; left: 0; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+    
+    /* Tekstur Garis Piringan (Grooves) */
+    .vinyl::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: repeating-radial-gradient(circle, #111, #111 2px, #1a1a1a 3px, #111 4px); }
+    
+    /* Label Tengah Berwarna (Yang Bikin Putaran Terlihat Jelas) */
+    .vinyl-label { width: 30px; height: 30px; background: var(--pink-header); border-radius: 50%; border: 2px solid #000; position: relative; z-index: 2; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+    .vinyl-label::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 50%; background: rgba(255,255,255,0.3); } /* Pembatas bayangan label */
+    .vinyl-text { position: absolute; font-size: 5px; font-weight: 900; color: #7a1b1b; transform: rotate(-30deg); top: 10px; letter-spacing: 0.5px; }
+    
+    /* Kilauan Cahaya (Statis, Tidak Ikut Berputar) */
+    .vinyl-reflection { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 50%; background: conic-gradient(from 45deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.15) 15%, rgba(255,255,255,0) 30%, rgba(255,255,255,0) 50%, rgba(255,255,255,0.15) 65%, rgba(255,255,255,0) 80%); pointer-events: none; z-index: 3; mix-blend-mode: screen; }
+    
+    /* Tombol Putar / Jeda (Tepat di Spindle Tengah) */
+    .play-pause-btn { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 5; background: #fff; border-radius: 50%; width: 18px; height: 18px; display: flex; align-items: center; justify-content: center; font-size: 8px; color: #111; box-shadow: 0 1px 4px rgba(0,0,0,0.6); border: 1px solid #ccc; padding-left: 1.5px; transition: all 0.2s; }
+    
+    /* Jarum Pemutar (Tonearm) Super Realistis */
+    .tonearm-container { position: absolute; top: -5px; right: -12px; width: 35px; height: 60px; transform-origin: 20px 15px; transform: rotate(-22deg); transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1); z-index: 10; pointer-events: none; filter: drop-shadow(-2px 4px 4px rgba(0,0,0,0.5)); }
+    
+    /* Pemberat Belakang (Counterweight) */
+    .tonearm-counterweight { position: absolute; top: 2px; right: 12px; width: 12px; height: 9px; background: linear-gradient(to bottom, #666, #222); border-radius: 2px; }
+    
+    /* Poros Besi (Pivot Base) */
+    .tonearm-pivot { position: absolute; top: 10px; right: 10px; width: 18px; height: 18px; background: radial-gradient(circle at 30% 30%, #eee, #888, #222); border-radius: 50%; border: 1px solid #111; }
+    
+    /* Gagang Besi (Rod) */
+    .tonearm-rod { position: absolute; top: 20px; right: 17px; width: 3.5px; height: 36px; background: linear-gradient(to right, #999, #fff, #777); transform-origin: top center; transform: rotate(18deg); border-radius: 2px; }
+    
+    /* Kepala Jarum (Headshell Hitam) */
+    .tonearm-headshell { position: absolute; bottom: -12px; left: -4px; width: 9px; height: 15px; background: linear-gradient(to bottom, #333, #000); border-radius: 2px 2px 5px 5px; transform: rotate(24deg); border-top: 2px solid #silver; }
+    
+    /* Titik Jarum (Stylus Tip) */
+    .tonearm-stylus { position: absolute; bottom: -3px; left: 3px; width: 1.5px; height: 3px; background: #ddd; }
+    
+    /* Animasi Aktif Play */
+    @keyframes spin-vinyl { 100% { transform: rotate(360deg); } }
+    .music-player.is-playing .vinyl { animation: spin-vinyl 2.2s linear infinite; }
+    .music-player.is-playing .tonearm-container { transform: rotate(18deg); } /* Jarum pindah ke atas piringan */
+    
+    /* Tulisan kecil di bawah */
+    .music-text { font-size: 9px; font-weight: 700; color: #444; background: rgba(255,255,255,0.95); padding: 3px 8px; border-radius: 12px; text-transform: uppercase; letter-spacing: 0.5px; box-shadow: 0 2px 5px rgba(0,0,0,0.15); margin-top: 5px; transition: background 0.3s ease; }
+    .music-player.is-playing .music-text { background: var(--pink-header); color: #7a1b1b; }
 
     /* LAYANAN */
     .service-category { margin-top: 20px; background: #fff; padding: 20px; border-radius: 12px; border: 1px solid #f1f1f1; box-shadow: 0 4px 10px rgba(0,0,0,0.02); }
-    .service-category h4 { color: var(--red-dark); margin-top: 0; border-bottom: 2px solid var(--pink-header); display: inline-block; padding-bottom: 5px; }
-    .list-layanan p { font-weight: 500; margin: 10px 0; font-size: 1rem; color: #444; text-align: left; position: relative; padding-left: 20px; }
+    .service-category h4 { color: var(--red-dark); margin-top: 0; border-bottom: 2px solid var(--pink-header); display: inline-block; padding-bottom: 5px; font-size: 1.15rem; }
+    .list-layanan p { font-weight: 500; margin: 12px 0; font-size: 1rem; color: #444; text-align: left; position: relative; padding-left: 22px; }
     .list-layanan p::before { content: '✦'; position: absolute; left: 0; color: var(--gold-accent); }
     
     /* KONTAK */
@@ -133,7 +155,34 @@
     <source src="https://dl.dropboxusercontent.com/scl/fi/e72x1a0xb4ujvhv23u3h2/celin-dion-that-s-the-way-is-mp3pm_foTfBeGp.mp3?rlkey=2awmdznio0v5v0zng9m4mrzts" type="audio/mpeg">
   </audio>
 
-  <button id="music-btn" class="music-btn paused" onclick="toggleMusic()" aria-label="Putar musik latar" title="Putar Musik">🎵</button>
+  <!-- Piringan Hitam Murni Realistis -->
+  <div id="music-player" class="music-player" onclick="toggleMusic()" aria-label="Putar musik latar">
+    <div class="record-wrapper">
+      <div class="vinyl-container">
+        <div class="vinyl" id="vinyl-disc">
+          <div class="vinyl-label">
+            <span class="vinyl-text">MUA</span>
+          </div>
+        </div>
+        <!-- Pantulan Cahaya Lampu Statis -->
+        <div class="vinyl-reflection"></div>
+        <!-- Tombol Tengah / Spindle -->
+        <div class="play-pause-btn" id="play-pause-btn">▶</div>
+      </div>
+      
+      <!-- Tonearm (Jarum) 3D Style -->
+      <div class="tonearm-container">
+        <div class="tonearm-counterweight"></div>
+        <div class="tonearm-pivot"></div>
+        <div class="tonearm-rod">
+          <div class="tonearm-headshell">
+            <div class="tonearm-stylus"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="music-text" id="music-text">putar musik</div>
+  </div>
 
   <header class="header-pink">
     <h1>Aprilia Make Up Artist</h1>
@@ -164,9 +213,9 @@
         <span class="ba-label label-before">Before</span>
         <span class="ba-label label-after">After</span>
         <img src="foto-after-1.jpg" class="img-ba after" alt="Hasil makeup after Aprilia MUA" fetchpriority="high" decoding="sync" draggable="false">
-        <img src="foto-before-1.jpg" class="img-ba before" style="width: 50%;" alt="Wajah before makeup Aprilia MUA" fetchpriority="high" decoding="sync" draggable="false">
+        <img src="foto-before-1.jpg" class="img-ba before" alt="Wajah before makeup Aprilia MUA" fetchpriority="high" decoding="sync" draggable="false">
         <div class="slider-button" style="left: 50%;" aria-hidden="true"></div>
-        <input type="range" min="0" max="100" value="50" class="slider-input" aria-label="Geser untuk membandingkan before dan after makeup 1" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" oninput="slide(this)" onmousedown="startMusic()" ontouchstart="startMusic()">
+        <input type="range" min="0" max="100" value="50" class="slider-input" aria-label="Geser untuk membandingkan before dan after makeup 1" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" oninput="slide(this)">
       </figure>
 
       <!-- FOTO 2 -->
@@ -175,9 +224,9 @@
         <span class="ba-label label-before">Before</span>
         <span class="ba-label label-after">After</span>
         <img src="foto-after-2.jpg" class="img-ba after" alt="Hasil makeup after flawless Aprilia MUA" loading="lazy" decoding="async" draggable="false">
-        <img src="foto-before-2.jpg" class="img-ba before" style="width: 50%;" alt="Wajah before makeup flawless Aprilia MUA" loading="lazy" decoding="async" draggable="false">
+        <img src="foto-before-2.jpg" class="img-ba before" alt="Wajah before makeup flawless Aprilia MUA" loading="lazy" decoding="async" draggable="false">
         <div class="slider-button" style="left: 50%;" aria-hidden="true"></div>
-        <input type="range" min="0" max="100" value="50" class="slider-input" aria-label="Geser untuk membandingkan before dan after makeup 2" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" oninput="slide(this)" onmousedown="startMusic()" ontouchstart="startMusic()">
+        <input type="range" min="0" max="100" value="50" class="slider-input" aria-label="Geser untuk membandingkan before dan after makeup 2" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" oninput="slide(this)">
       </figure>
 
       <!-- FOTO 3 -->
@@ -186,9 +235,9 @@
         <span class="ba-label label-before">Before</span>
         <span class="ba-label label-after">After</span>
         <img src="foto-after-3.jpg" class="img-ba after" alt="Hasil makeup after elegan Aprilia MUA" loading="lazy" decoding="async" draggable="false">
-        <img src="foto-before-3.jpg" class="img-ba before" style="width: 50%;" alt="Wajah before makeup elegan Aprilia MUA" loading="lazy" decoding="async" draggable="false">
+        <img src="foto-before-3.jpg" class="img-ba before" alt="Wajah before makeup elegan Aprilia MUA" loading="lazy" decoding="async" draggable="false">
         <div class="slider-button" style="left: 50%;" aria-hidden="true"></div>
-        <input type="range" min="0" max="100" value="50" class="slider-input" aria-label="Geser untuk membandingkan before dan after makeup 3" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" oninput="slide(this)" onmousedown="startMusic()" ontouchstart="startMusic()">
+        <input type="range" min="0" max="100" value="50" class="slider-input" aria-label="Geser untuk membandingkan before dan after makeup 3" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" oninput="slide(this)">
       </figure>
 
       <!-- FOTO 4 -->
@@ -197,13 +246,13 @@
         <span class="ba-label label-before">Before</span>
         <span class="ba-label label-after">After</span>
         <img src="foto-after-4.jpg" class="img-ba after" alt="Hasil makeup after natural Aprilia MUA" loading="lazy" decoding="async" draggable="false">
-        <img src="foto-before-4.jpg" class="img-ba before" style="width: 50%;" alt="Wajah before makeup natural Aprilia MUA" loading="lazy" decoding="async" draggable="false">
+        <img src="foto-before-4.jpg" class="img-ba before" alt="Wajah before makeup natural Aprilia MUA" loading="lazy" decoding="async" draggable="false">
         <div class="slider-button" style="left: 50%;" aria-hidden="true"></div>
-        <input type="range" min="0" max="100" value="50" class="slider-input" aria-label="Geser untuk membandingkan before dan after makeup 4" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" oninput="slide(this)" onmousedown="startMusic()" ontouchstart="startMusic()">
+        <input type="range" min="0" max="100" value="50" class="slider-input" aria-label="Geser untuk membandingkan before dan after makeup 4" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" oninput="slide(this)">
       </figure>
     </section>
 
-    <!-- BAGIAN LAYANAN YANG SUDAH DIPERBARUI -->
+    <!-- BAGIAN LAYANAN -->
     <section id="layanan">
       <h3>Layanan Kami</h3>
       
@@ -226,8 +275,6 @@
           <p>Makeup Anak</p>
         </div>
       </div>
-      
-      <p style="font-style: italic; color: #555; margin-top: 20px; font-size: 0.9rem; text-align: center;">Tersedia paket makeup untuk berbagai acara spesial Anda. Silakan konsultasikan kebutuhan Anda kepada kami.</p>
     </section>
 
     <section id="kontak">
@@ -254,35 +301,23 @@
 
   <script>
     const music = document.getElementById('bg-music');
-    const musicBtn = document.getElementById('music-btn');
-    let hasStarted = false;
-
-    function startMusic() {
-      if (!hasStarted) {
-        music.play().then(() => {
-          musicBtn.classList.remove('paused');
-          musicBtn.classList.add('playing');
-          musicBtn.setAttribute('aria-label', 'Jeda musik latar');
-          hasStarted = true;
-        }).catch(() => {});
-      }
-    }
-
-    document.body.addEventListener('click', startMusic, { once: true, passive: true });
-    document.body.addEventListener('touchstart', startMusic, { once: true, passive: true });
+    const musicPlayer = document.getElementById('music-player');
+    const musicText = document.getElementById('music-text');
+    const playPauseBtn = document.getElementById('play-pause-btn');
 
     function toggleMusic() {
-      hasStarted = true;
       if (music.paused) {
         music.play();
-        musicBtn.classList.remove('paused');
-        musicBtn.classList.add('playing');
-        musicBtn.setAttribute('aria-label', 'Jeda musik latar');
+        musicPlayer.classList.add('is-playing');
+        playPauseBtn.innerText = '❚❚';
+        playPauseBtn.style.paddingLeft = '0';
+        musicText.innerText = 'bermain...';
       } else {
         music.pause();
-        musicBtn.classList.remove('playing');
-        musicBtn.classList.add('paused');
-        musicBtn.setAttribute('aria-label', 'Putar musik latar');
+        musicPlayer.classList.remove('is-playing');
+        playPauseBtn.innerText = '▶';
+        playPauseBtn.style.paddingLeft = '1.5px';
+        musicText.innerText = 'putar musik';
       }
     }
 
