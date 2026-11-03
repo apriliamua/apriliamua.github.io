@@ -2,7 +2,7 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Aprilia Make Up Artist - Layanan rias profesional untuk Wedding, Prewedding, Wisuda, dan acara spesial. Melayani area Klaten, Kulon Progo, dan Yogyakarta.">
     <meta property="og:title" content="Aprilia Make Up Artist">
     <meta property="og:description" content="Tampilan Cantik dan Natural untuk Momen Berharga Anda.">
@@ -14,7 +14,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
     
     <!-- Preload Gambar (DARI VERSI 2) -->
-    <link rel="preload" as="image" href="foto-after-1.jpg">
+    <link rel="preload" as="image" href="foto-after-1.jpg" fetchpriority="high">
     <link rel="preload" as="image" href="foto-before-1.jpg">
 
     <style>
@@ -231,7 +231,7 @@
     </audio>
 
     <!-- PIRINGAN HITAM -->
-    <div id="music-player" class="music-player" onclick="toggleMusic()" aria-label="Putar musik latar">
+    <div id="music-player" class="music-player" onclick="toggleMusic()" aria-label="Putar musik latar" role="button" tabindex="0">
         <div class="record-wrapper">
           <div class="vinyl-container">
             <div class="vinyl" id="vinyl-disc">
